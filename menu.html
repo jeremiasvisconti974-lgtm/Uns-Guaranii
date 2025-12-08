@@ -1,80 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>SIU Guaraní – Menú Principal</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f5f5f5;
-    }
-    .topbar {
-        background: #0056b3;
-        color: white;
-        padding: 12px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .username {
-        font-weight: bold;
-    }
-    .container {
-        padding: 20px;
-    }
-    h2 {
-        color: #333;
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 5px;
-    }
-    .panel {
-        background: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.15);
-        margin-bottom: 20px;
-    }
-    .messages {
-        background: #fff9d9;
-        padding: 12px;
-        border-left: 4px solid #e0b000;
-        margin-bottom: 20px;
-        border-radius: 4px;
-    }
-</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SIU Guaraní - Panel</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar">
-    <div>SIU Guaraní – Inicio</div>
-    <div class="username">Jeremías Visconti – Ingeniería Civil</div>
-</div>
+<header class="header-top">
+  <div class="header-inner">
+    <img class="uns-logo" src="https://g3w.uns.edu.ar/Guarani3w/img/logo_uns.png" alt="UNS">
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li class="home"><a href="#">🏠</a></li>
 
-<div class="container">
+        <li class="has-sub">
+          <button> Cursadas <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Inscripción a Cursadas</a></li>
+            <li><a href="#">Mis comisiones</a></li>
+            <li><a href="#">Comisiones</a></li>
+          </ul>
+        </li>
 
-    <div class="messages">
-        <b>Mensaje:</b> Actualizá tu correo electrónico institucional.  
-        <br>Inscripciones abiertas: 03/03/2025 al 10/03/2025  
-        <br>Regularidades actualizadas al 30/03/2025
+        <li class="has-sub">
+          <button>Exámenes <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Inscripción a exámenes</a></li>
+            <li><a href="#">Turnos</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <button>Remediales <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Consulta remediales</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <button>Matrícula <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Estado de matrícula</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <button>Certificaciones <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Solicitud de Certificados</a></li>
+            <li><a href="#">Consulta / Anulación</a></li>
+          </ul>
+        </li>
+
+        <li class="active"><button>Consultas</button></li>
+
+        <li class="has-sub">
+          <button>Servicios <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Bajas</a></li>
+            <li><a href="#">Reincorporaciones</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <button>Egresados <span class="caret">▾</span></button>
+          <ul class="sub">
+            <li><a href="#">Trámites</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="user-box">
+      Jeremías Visconti — Ingeniería Civil
+    </div>
+  </div>
+</header>
+
+<!-- PAGE LAYOUT -->
+<div class="page-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <div class="box">
+      <h4>Marca la información que deseas ver:</h4>
+
+      <div class="filter-group">
+        <div class="filter-title">Cursadas</div>
+        <label><input type="checkbox" checked> Promocionada</label>
+        <label><input type="checkbox" checked> Aprobada</label>
+        <label><input type="checkbox" checked> <em>Desaprobada</em></label>
+        <label><input type="checkbox" checked> Ausente</label>
+        <label><input type="checkbox" checked> En curso</label>
+      </div>
+
+      <hr>
+
+      <div class="filter-group">
+        <div class="filter-title">Exámenes</div>
+        <label><input type="checkbox" checked> Aprobado</label>
+        <label><input type="checkbox" checked> Desaprobado</label>
+      </div>
+
+      <hr>
+
+      <div class="filter-group">
+        <div class="filter-title">Equivalencias</div>
+        <label><input type="checkbox" checked> Aprobada</label>
+        <label><input type="checkbox"> Reprobada</label>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-main">
+    <div class="panel box">
+      <h1 class="title-main">Historia académica</h1>
+      <div class="meta">Plan del Alumno: 2007 &nbsp;&nbsp; <span class="status">Estado: Alumno Regular</span></div>
+
+      <div class="controls">
+        <label>Ver por</label>
+        <button class="control-btn">Año</button>
+        <button class="control-btn">Materia</button>
+
+        <select class="period-select">
+          <option>Todos los años</option>
+          <option>2025</option>
+        </select>
+      </div>
+
+      <!-- YEAR BLOCK 2025 -->
+      <div class="year-block">
+        <div class="year-bar">2025</div>
+
+        <div class="course-row">
+          <div class="course-title">TECNOLOGÍA APLICADA <span class="code">(3101)</span></div>
+          <div class="course-sub">Cursada : En curso — <a href="#">Detalle</a></div>
+        </div>
+
+        <div class="course-row alt">
+          <div class="course-title">CONSTRUCCIÓN <span class="code">(3102)</span></div>
+          <div class="course-sub">Cursada : Regular — <a href="#">Detalle</a></div>
+        </div>
+
+        <div class="course-row">
+          <div class="course-title">MANTENIMIENTO DE INFRAESTRUCTURA <span class="code">(3103)</span></div>
+          <div class="course-sub">Cursada : Regular — <a href="#">Detalle</a></div>
+        </div>
+
+        <div class="course-row alt">
+          <div class="course-title">ANÁLISIS MATEMÁTICO I <span class="code">(3150)</span></div>
+          <div class="course-sub">Examen : 8 (Ocho) Aprobado — <a href="#">Detalle</a></div>
+        </div>
+
+        <div class="course-row">
+          <div class="course-title">ÁLGEBRA <span class="code">(3151)</span></div>
+          <div class="course-sub">Cursada : Aprobada — <a href="#">Detalle</a></div>
+        </div>
+
+        <!-- add more rows to simulate long list -->
+        <div class="course-row alt">
+          <div class="course-title">FÍSICA I <span class="code">(3250)</span></div>
+          <div class="course-sub">Examen : 6 (Seis) Desaprobado — <a href="#">Detalle</a></div>
+        </div>
+
+        <div class="course-row">
+          <div class="course-title">QUÍMICA GENERAL <span class="code">(3300)</span></div>
+          <div class="course-sub">Cursada : En curso — <a href="#">Detalle</a></div>
+        </div>
+
+      </div> <!-- /year-block -->
+
+      <!-- YEAR BLOCK 2019 - example previous years -->
+      <div class="year-block">
+        <div class="year-bar">2019</div>
+
+        <div class="course-row">
+          <div class="course-title">INTRODUCCIÓN A LA INGENIERÍA CIVIL <span class="code">(3990)</span></div>
+          <div class="course-sub">Cursada : Aprobada — <a href="#">Detalle</a></div>
+        </div>
+        <div class="course-row alt">
+          <div class="course-title">DIBUJO TÉCNICO <span class="code">(3500)</span></div>
+          <div class="course-sub">Cursada : Aprobada — <a href="#">Detalle</a></div>
+        </div>
+      </div>
+
+    </div> <!-- /panel -->
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+    <div class="box small">
+      <h4>Calendario Académico</h4>
+      <p><strong>2025 - Primer Cuatr.</strong></p>
+      <p>Inicio clases: 03/03/2025</p>
+      <p>Fin clases: 30/06/2025</p>
     </div>
 
-    <div class="panel">
-        <h2>📚 Materias – Primer año (2025)</h2>
-
-        <p><b>(3101)</b> Tecnología Aplicada</p>
-        <p><b>(3102)</b> Construcción</p>
-        <p><b>(3103)</b> Mantenimiento de Infraestructura</p>
-        <p><b>(3150)</b> Análisis Matemático I</p>
-        <p><b>(3151)</b> Álgebra</p>
-        <p><b>(3250)</b> Física I</p>
-        <p><b>(3300)</b> Química General</p>
-        <p><b>(3400)</b> Geología</p>
-        <p><b>(3500)</b> Dibujo Técnico</p>
-        <p><b>(3990)</b> Introducción a la Ingeniería Civil</p>
+    <div class="box small">
+      <h4>Cursadas</h4>
+      <p>Inicio Inscripciones: 03/03/2025</p>
+      <p>Fin Inscripciones: 10/03/2025</p>
+      <div class="info-notice">No tenés inscripciones vigentes para el periodo lectivo y la carrera seleccionados.</div>
     </div>
 
-</div>
+    <div class="box small">
+      <h4>Exámenes</h4>
+      <p>Turno 2025-01</p>
+      <p>Inicio: 01/07/2025</p>
+    </div>
+  </aside>
+
+</div> <!-- /page-wrap -->
+
+<script>
+/* dropdown open on hover (desktop) and toggle on click (mobile) */
+document.querySelectorAll('.main-nav .has-sub').forEach(function(li){
+  // open on click for mobile
+  li.addEventListener('click', function(e){
+    // prevent global click from firing when clicking subitems
+    if(e.target.tagName.toLowerCase() === 'button') {
+      this.classList.toggle('open');
+    }
+  });
+  // open on hover for desktop
+  li.addEventListener('mouseenter', function(){ this.classList.add('open'); });
+  li.addEventListener('mouseleave', function(){ this.classList.remove('open'); });
+});
+</script>
 
 </body>
 </html>
