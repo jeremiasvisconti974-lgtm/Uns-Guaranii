@@ -12,7 +12,17 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   max-width:1150px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;
 }
 .logo{display:flex;align-items:center;gap:10px}
-.logo-img{height:40px;width:40px;object-fit:contain;border-radius:4px}
+
+/* 🔵 LOGO UNS CORREGIDO (LO ÚNICO QUE EDITÉ) */
+.logo-img{
+  height:40px;
+  width:40px;
+  object-fit:contain;
+  border-radius:4px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 .logo-text{font-weight:700;color:#0d5d85;font-size:18px}
 .logo-small{font-weight:400;font-size:12px;margin-left:8px;color:#567}
 
