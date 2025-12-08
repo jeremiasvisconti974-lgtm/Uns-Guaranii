@@ -11,7 +11,9 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .header-inner{
   max-width:1150px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;
 }
-.logo{font-weight:700;color:#0d5d85;font-size:18px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-img{height:40px;width:40px;object-fit:contain;border-radius:4px}
+.logo-text{font-weight:700;color:#0d5d85;font-size:18px}
 .logo-small{font-weight:400;font-size:12px;margin-left:8px;color:#567}
 
 /* nav */
@@ -80,11 +82,11 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   display:flex;justify-content:space-between;align-items:center;
   border:1px solid #e9ecef;
 }
-.subject-title{font-weight:700;color:#333}
-.subject-meta{color:#4e5a60;font-size:14px;display:flex;align-items:center;gap:6px}
+.subject-title{font-weight:700;color:#333;max-width:72%}
+.subject-meta{color:#4e5a60;font-size:14px;display:flex;align-items:center;gap:6px;white-space:nowrap}
 
 /* tags */
-.tag{padding:6px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:13px}
+.tag{padding:6px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:13px;min-width:72px;text-align:center}
 .tag.green{background:#00a651}
 .tag.red{background:#e74c3c}
 .tag.blue{background:#00a0d6}
