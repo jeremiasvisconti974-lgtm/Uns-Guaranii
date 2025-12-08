@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Panel Académico</title>
-<link rel="stylesheet" href="style.css">
-
-<script>
-window.onload = () => {
-    const usuario = sessionStorage.getItem("usuario");
-    if (!usuario) window.location.href = "index.html";
-    document.getElementById("nombreAlumno").innerText = usuario.toUpperCase();
-}
-</script>
-
+    <meta charset="UTF-8">
+    <title>Historia Académica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="header">
-    <h2>Sistema Guaraní UNS</h2>
-</div>
+<header class="navbar">
+    <div class="logo">UNS Virtual</div>
+    <nav>
+        <ul class="menu">
+            <li><a href="menu.html">🏠 Inicio</a></li>
+            <li><a href="#">Cursadas</a></li>
+            <li><a href="#">Exámenes</a></li>
+            <li><a href="#">Consultas</a></li>
+            <li><a href="index.html">Salir</a></li>
+        </ul>
+    </nav>
+</header>
 
-<div class="sidebar">
-    <p>Materias</p>
-    <p>Calificaciones</p>
-    <p>Inscripción</p>
-    <p>Perfil</p>
-</div>
+<div class="panel-academico">
+    <h2>Historia Académica</h2>
 
-<div class="main">
+    <div class="filtros">
+        <label>Año</label>
+        <select><option>Todos</option></select>
 
-    <h3>Alumno: <span id="nombreAlumno"></span></h3>
-    <h2>Ingeniería Civil - Materias</h2>
+        <label>Materia</label>
+        <select><option>Todas</option></select>
+    </div>
+
+    <h3 class="anio">2025</h3>
 
     <div class="materia">
-        <h4>Cálculo I</h4>
-        Estado: Regular<br>
-        Tareas: TP Nº2 mañana
+        <b>Tecnología Aplicada</b>
+        <span class="estado aprobado">Cursada: Aprobada</span>
     </div>
 
     <div class="materia">
-        <h4>Estabilidad I</h4>
-        Estado: Cursando<br>
-        Tareas: Problemas 3,4,7
+        <b>Construcción</b>
+        <span class="estado desaprobado">Cursada: Desaprobada</span>
     </div>
 
     <div class="materia">
-        <h4>Hormigón Armado</h4>
-        Estado: Regular<br>
-        Tareas: Carpeta firmada
+        <b>Mantenimiento de Infraestructura</b>
+        <span class="estado aprobado">Cursada: Aprobada</span>
     </div>
 
     <div class="materia">
-        <h4>Física II</h4>
-        Estado: Cursando<br>
-        Tareas: Guía Nº8
+        <b>Matemática I</b>
+        <span class="estado en-curso">En curso</span>
     </div>
 
 </div>
