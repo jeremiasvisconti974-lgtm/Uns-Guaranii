@@ -11,7 +11,10 @@
   <!-- HEADER / MENU SUPERIOR -->
   <header class="header">
     <div class="header-inner">
-      <div class="logo">SIU Guaraní<span class="logo-small"> — UNS</span></div>
+      <div class="logo">
+        <img src="uns_logo.png" alt="UNS" class="logo-img">
+        <span class="logo-text">SIU Guaraní<span class="logo-small"> — UNS</span></span>
+      </div>
 
       <nav class="main-nav" aria-label="main navigation">
         <ul>
@@ -462,6 +465,7 @@ document.querySelectorAll('.sidebar-left input[type="checkbox"]').forEach(ch=>{
       return;
     }
     document.querySelectorAll('.subject').forEach(s=>{
+      // check if subject has any of the checked classes
       const has = checked.some(cls => s.classList.contains(cls));
       s.style.display = has ? '' : 'none';
     });
