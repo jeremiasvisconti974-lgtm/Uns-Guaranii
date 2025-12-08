@@ -1,115 +1,370 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Académico</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SIU Guaraní — Panel Académico</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ====================== BARRA SUPERIOR ====================== -->
-    <header class="topbar">
-        <div class="top-left">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Student_icon.svg/2048px-Student_icon.svg.png" class="user-icon">
-            <span class="username">Alumno: Visconti Jere</span>
+  <!-- HEADER / MENU SUPERIOR -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">SIU Guaraní<span class="logo-small"> — UNS (replica)</span></div>
+
+      <nav class="main-nav" aria-label="main navigation">
+        <ul>
+          <li class="nav-item home"><a href="#">🏠 Inicio</a></li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Cursadas ▾</button>
+            <ul class="sub">
+              <li><a href="#">Ver cursadas</a></li>
+              <li><a href="#">Inscripción a materias</a></li>
+              <li><a href="#">Historial</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Exámenes ▾</button>
+            <ul class="sub">
+              <li><a href="#">Inscripción a exámenes</a></li>
+              <li><a href="#">Turnos</a></li>
+              <li><a href="#">Actas</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Remediales ▾</button>
+            <ul class="sub">
+              <li><a href="#">Consulta remediales</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Matrícula ▾</button>
+            <ul class="sub">
+              <li><a href="#">Estado de matrícula</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Certificaciones ▾</button>
+            <ul class="sub">
+              <li><a href="#">Analítico</a></li>
+              <li><a href="#">Constancia alumno regular</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub active">
+            <button class="sub-btn">Consultas ▾</button>
+            <ul class="sub">
+              <li><a href="#">Historia Académica</a></li>
+              <li><a href="#">Reportes</a></li>
+              <li><a href="#">Trámites</a></li>
+              <li><a href="#">Solicitud de título</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Servicios ▾</button>
+            <ul class="sub">
+              <li><a href="#">Becas</a></li>
+              <li><a href="#">Soporte</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-sub">
+            <button class="sub-btn">Egresados ▾</button>
+            <ul class="sub">
+              <li><a href="#">Trámites egreso</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item logout"><a href="index.html">Salir</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-info">
+        Jeremías Visconti — Ingeniería Civil
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE GRID -->
+  <div class="page">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-left">
+      <div class="box">
+        <h3>Marca la información que deseas ver:</h3>
+
+        <div class="filter-block">
+          <h4>Cursadas</h4>
+          <label><input type="checkbox" checked data-filter="promocionada"> Promocionada</label>
+          <label><input type="checkbox" checked data-filter="aprobada"> Aprobada</label>
+          <label><input type="checkbox" checked data-filter="desaprobada"> <em>Desaprobada</em></label>
+          <label><input type="checkbox" checked data-filter="ausente"> Ausente</label>
+          <label><input type="checkbox" checked data-filter="en-curso"> En curso</label>
         </div>
 
-        <nav class="top-menu">
-            <a href="#" class="active">🏠 Inicio</a>
-            <a href="#">📚 Cursadas</a>
-            <a href="#">📝 Exámenes</a>
-            <a href="#">📘 Remediales</a>
-            <a href="#">💳 Matrícula</a>
-            <a href="#">📄 Certificaciones</a>
-            <a href="#">💬 Consultas</a>
-            <a href="#">⚙ Servicios</a>
-            <a href="#">🎓 Egresados</a>
-        </nav>
-    </header>
+        <hr>
 
-    <!-- ====================== CONTENEDOR GENERAL ====================== -->
-    <div class="container">
+        <div class="filter-block">
+          <h4>Exámenes</h4>
+          <label><input type="checkbox" checked data-filter="exam-aprobado"> Aprobado</label>
+          <label><input type="checkbox" checked data-filter="exam-desap"> Desaprobado</label>
+        </div>
 
-        <!-- ====================== COLUMNA IZQUIERDA ====================== -->
-        <aside class="sidebar">
+        <hr>
 
-            <!-- CURSADAS -->
-            <div class="box">
-                <h3>Cursadas</h3>
-                <ul>
-                    <li><span class="status green"></span> Promocionada</li>
-                    <li><span class="status green"></span> Aprobada</li>
-                    <li><span class="status red"></span> Desaprobada</li>
-                    <li><span class="status red"></span> Ausente</li>
-                    <li><span class="status blue"></span> En curso</li>
-                </ul>
-            </div>
+        <div class="filter-block">
+          <h4>Equivalencias</h4>
+          <label><input type="checkbox" checked data-filter="equiv-aprobada"> Aprobada</label>
+          <label><input type="checkbox" checked data-filter="equiv-reprobada"> Reprobada</label>
+        </div>
+      </div>
+    </aside>
 
-            <!-- EXÁMENES -->
-            <div class="box">
-                <h3>Exámenes</h3>
-                <ul>
-                    <li><span class="status green"></span> Aprobado</li>
-                    <li><span class="status red"></span> Desaprobado</li>
-                </ul>
-            </div>
+    <!-- MAIN -->
+    <main class="main">
 
-            <!-- EQUIVALENCIAS -->
-            <div class="box">
-                <h3>Equivalencias</h3>
-                <ul>
-                    <li><span class="status green"></span> Aprobada</li>
-                    <li><span class="status red"></span> Reprobada</li>
-                </ul>
-            </div>
+      <div class="panel box">
+        <h1>Historia académica</h1>
+        <div class="meta">
+          <div>Plan del Alumno: <strong>2007</strong></div>
+          <div class="status-right">Estado: <strong>Alumno Regular</strong></div>
+        </div>
 
-        </aside>
+        <div class="controls">
+          <div class="control-group">
+            <label>Año</label>
+            <select id="select-year">
+              <option value="all">Todos los años</option>
+              <option value="2025" selected>2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </div>
 
-        <!-- ====================== CONTENIDO CENTRAL ====================== -->
-        <main class="main-content">
+          <div class="control-group">
+            <label>Materia</label>
+            <select id="select-materia">
+              <option value="all">Todas las materias</option>
+            </select>
+          </div>
 
-            <h1>Historia Académica</h1>
+          <div class="control-group">
+            <button id="btn-show-all" class="btn-blue">Mostrar Todos los Años</button>
+          </div>
+        </div>
 
-            <!-- FILTROS -->
-            <div class="filters">
-                <select>
-                    <option>Seleccionar año</option>
-                    <option>2025</option>
-                </select>
+        <!-- YEAR 2025 -->
+        <div class="year-block" data-year="2025">
+          <div class="year-bar">2025</div>
 
-                <select>
-                    <option>Seleccionar materia</option>
-                </select>
+          <!-- SUBJECT ROWS (state classes: promocionada / aprobada / desaprobada / ausente / en-curso) -->
+          <div class="subject promocionada">
+            <div class="subject-title">Matemática I (Cálculo diferencial)</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Promocionada</span></div>
+          </div>
 
-                <button class="btn">Mostrar Todos los Años</button>
-            </div>
+          <div class="subject aprobada">
+            <div class="subject-title">Matemática II (Cálculo integral)</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
 
-            <!-- AÑO 2025 -->
-            <div class="year-block">
-                <div class="year-title">2025</div>
+          <div class="subject aprobada">
+            <div class="subject-title">Álgebra Lineal</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
 
-                <!-- MATERIAS QUE PEDISTE -->
-                <div class="subject">
-                    <div class="subject-name">Tecnología Aplicada</div>
-                    <div class="subject-status in-course">En curso</div>
-                </div>
+          <div class="subject en-curso">
+            <div class="subject-title">Ecuaciones Diferenciales</div>
+            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+          </div>
 
-                <div class="subject">
-                    <div class="subject-name">Construcción</div>
-                    <div class="subject-status approved">Aprobada</div>
-                </div>
+          <div class="subject desaprobada">
+            <div class="subject-title">Probabilidad y Estadística</div>
+            <div class="subject-meta">Cursada · <span class="tag red">Desaprobada</span></div>
+          </div>
 
-                <div class="subject">
-                    <div class="subject-name">Mantenimiento de Infraestructura</div>
-                    <div class="subject-status failed">Desaprobada</div>
-                </div>
+          <div class="subject aprobada">
+            <div class="subject-title">Física I</div>
+            <div class="subject-meta">Examen · <span class="tag green">Aprobado</span></div>
+          </div>
 
-            </div>
+          <div class="subject aprobada">
+            <div class="subject-title">Química General</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
 
-        </main>
+          <div class="subject aprobada">
+            <div class="subject-title">Informática / Computación</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
 
-    </div>
+          <div class="subject en-curso">
+            <div class="subject-title">Geometría Descriptiva</div>
+            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Dibujo Técnico</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+        </div> <!-- /year 2025 -->
+
+        <!-- YEAR 2026 -->
+        <div class="year-block" data-year="2026">
+          <div class="year-bar">2026</div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Física II</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+          <div class="subject en-curso">
+            <div class="subject-title">Topografía</div>
+            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Materiales de Construcción</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+          <div class="subject en-curso">
+            <div class="subject-title">Mecánica (Resistencia / Estática)</div>
+            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+          </div>
+
+          <div class="subject desaprobada">
+            <div class="subject-title">Mecánica de Fluidos / Hidráulica</div>
+            <div class="subject-meta">Cursada · <span class="tag red">Desaprobada</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Resistencia de Materiales (Estructuras I)</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Geotecnia (Mecánica de Suelos)</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+          <div class="subject en-curso">
+            <div class="subject-title">Vías de Comunicación (Transportes)</div>
+            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Construcción</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+          <div class="subject aprobada">
+            <div class="subject-title">Topografía y Saneamiento Ambiental</div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
+          </div>
+
+        </div> <!-- /year 2026 -->
+
+      </div> <!-- /panel -->
+    </main>
+
+    <!-- RIGHT SIDEBAR (si querés info adicional) -->
+    <aside class="sidebar-right">
+      <div class="box">
+        <h4>Calendario Académico</h4>
+        <p><strong>2025 - Primer Cuatr.</strong></p>
+        <p>Inicio clases: 03/03/2025</p>
+        <p>Fin clases: 30/06/2025</p>
+      </div>
+
+      <div class="box">
+        <h4>Inscripciones</h4>
+        <p>Inicio inscripciones: 03/03/2025</p>
+        <p>Fin inscripciones: 10/03/2025</p>
+      </div>
+
+      <div class="box">
+        <h4>Exámenes</h4>
+        <p>Turno 2025-01</p>
+        <p>Inicio: 01/07/2025</p>
+      </div>
+    </aside>
+
+  </div> <!-- /page -->
+
+<script>
+/* SUBMENU behavior: click toggle (works mobile) + hover open (desktop) */
+document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
+  const btn = li.querySelector('.sub-btn');
+  btn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    li.classList.toggle('open');
+  });
+  li.addEventListener('mouseenter', ()=> li.classList.add('open'));
+  li.addEventListener('mouseleave', ()=> li.classList.remove('open'));
+});
+
+/* Populate materia select from DOM */
+(function fillMateriaSelect(){
+  const sel = document.getElementById('select-materia');
+  const subjects = Array.from(document.querySelectorAll('.subject .subject-title')).map(n=>n.textContent.trim());
+  const unique = [...new Set(subjects)];
+  unique.forEach(s=>{
+    const opt = document.createElement('option');
+    opt.value = s;
+    opt.textContent = s;
+    sel.appendChild(opt);
+  });
+})();
+
+/* Year select + show/hide logic */
+const selectYear = document.getElementById('select-year');
+selectYear.addEventListener('change', ()=>{
+  const v = selectYear.value;
+  document.querySelectorAll('.year-block').forEach(block=>{
+    block.style.display = (v==='all' || block.dataset.year === v) ? '' : 'none';
+  });
+});
+
+/* Materia filter */
+document.getElementById('select-materia').addEventListener('change', function(){
+  const v = this.value;
+  document.querySelectorAll('.subject').forEach(s=>{
+    const title = s.querySelector('.subject-title').textContent.trim();
+    s.style.display = (v==='all' || v===title) ? '' : 'none';
+  });
+});
+
+/* Show all years button */
+document.getElementById('btn-show-all').addEventListener('click', ()=>{
+  document.getElementById('select-year').value = 'all';
+  document.querySelectorAll('.year-block').forEach(b=> b.style.display = '');
+});
+
+/* Sidebar checkboxes: filter by class */
+document.querySelectorAll('.sidebar-left input[type="checkbox"]').forEach(ch=>{
+  ch.addEventListener('change', ()=> {
+    const checked = Array.from(document.querySelectorAll('.sidebar-left input[type="checkbox"]:checked')).map(i=>i.dataset.filter);
+    // if nothing checked, show all
+    if(checked.length===0){
+      document.querySelectorAll('.subject').forEach(s=> s.style.display = '');
+      return;
+    }
+    document.querySelectorAll('.subject').forEach(s=>{
+      // check if subject has any of the checked classes
+      const has = checked.some(cls => s.classList.contains(cls));
+      s.style.display = has ? '' : 'none';
+    });
+  });
+});
+</script>
 
 </body>
 </html>
