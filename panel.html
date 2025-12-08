@@ -2,58 +2,114 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Historia Académica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Académico</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">UNS Virtual</div>
-    <nav>
-        <ul class="menu">
-            <li><a href="menu.html">🏠 Inicio</a></li>
-            <li><a href="#">Cursadas</a></li>
-            <li><a href="#">Exámenes</a></li>
-            <li><a href="#">Consultas</a></li>
-            <li><a href="index.html">Salir</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- ====================== BARRA SUPERIOR ====================== -->
+    <header class="topbar">
+        <div class="top-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Student_icon.svg/2048px-Student_icon.svg.png" class="user-icon">
+            <span class="username">Alumno: Visconti Jere</span>
+        </div>
 
-<div class="panel-academico">
-    <h2>Historia Académica</h2>
+        <nav class="top-menu">
+            <a href="#" class="active">🏠 Inicio</a>
+            <a href="#">📚 Cursadas</a>
+            <a href="#">📝 Exámenes</a>
+            <a href="#">📘 Remediales</a>
+            <a href="#">💳 Matrícula</a>
+            <a href="#">📄 Certificaciones</a>
+            <a href="#">💬 Consultas</a>
+            <a href="#">⚙ Servicios</a>
+            <a href="#">🎓 Egresados</a>
+        </nav>
+    </header>
 
-    <div class="filtros">
-        <label>Año</label>
-        <select><option>Todos</option></select>
+    <!-- ====================== CONTENEDOR GENERAL ====================== -->
+    <div class="container">
 
-        <label>Materia</label>
-        <select><option>Todas</option></select>
+        <!-- ====================== COLUMNA IZQUIERDA ====================== -->
+        <aside class="sidebar">
+
+            <!-- CURSADAS -->
+            <div class="box">
+                <h3>Cursadas</h3>
+                <ul>
+                    <li><span class="status green"></span> Promocionada</li>
+                    <li><span class="status green"></span> Aprobada</li>
+                    <li><span class="status red"></span> Desaprobada</li>
+                    <li><span class="status red"></span> Ausente</li>
+                    <li><span class="status blue"></span> En curso</li>
+                </ul>
+            </div>
+
+            <!-- EXÁMENES -->
+            <div class="box">
+                <h3>Exámenes</h3>
+                <ul>
+                    <li><span class="status green"></span> Aprobado</li>
+                    <li><span class="status red"></span> Desaprobado</li>
+                </ul>
+            </div>
+
+            <!-- EQUIVALENCIAS -->
+            <div class="box">
+                <h3>Equivalencias</h3>
+                <ul>
+                    <li><span class="status green"></span> Aprobada</li>
+                    <li><span class="status red"></span> Reprobada</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- ====================== CONTENIDO CENTRAL ====================== -->
+        <main class="main-content">
+
+            <h1>Historia Académica</h1>
+
+            <!-- FILTROS -->
+            <div class="filters">
+                <select>
+                    <option>Seleccionar año</option>
+                    <option>2025</option>
+                </select>
+
+                <select>
+                    <option>Seleccionar materia</option>
+                </select>
+
+                <button class="btn">Mostrar Todos los Años</button>
+            </div>
+
+            <!-- AÑO 2025 -->
+            <div class="year-block">
+                <div class="year-title">2025</div>
+
+                <!-- MATERIAS QUE PEDISTE -->
+                <div class="subject">
+                    <div class="subject-name">Tecnología Aplicada</div>
+                    <div class="subject-status in-course">En curso</div>
+                </div>
+
+                <div class="subject">
+                    <div class="subject-name">Construcción</div>
+                    <div class="subject-status approved">Aprobada</div>
+                </div>
+
+                <div class="subject">
+                    <div class="subject-name">Mantenimiento de Infraestructura</div>
+                    <div class="subject-status failed">Desaprobada</div>
+                </div>
+
+            </div>
+
+        </main>
+
     </div>
-
-    <h3 class="anio">2025</h3>
-
-    <div class="materia">
-        <b>Tecnología Aplicada</b>
-        <span class="estado aprobado">Cursada: Aprobada</span>
-    </div>
-
-    <div class="materia">
-        <b>Construcción</b>
-        <span class="estado desaprobado">Cursada: Desaprobada</span>
-    </div>
-
-    <div class="materia">
-        <b>Mantenimiento de Infraestructura</b>
-        <span class="estado aprobado">Cursada: Aprobada</span>
-    </div>
-
-    <div class="materia">
-        <b>Matemática I</b>
-        <span class="estado en-curso">En curso</span>
-    </div>
-
-</div>
 
 </body>
 </html>
