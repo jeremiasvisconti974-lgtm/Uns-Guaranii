@@ -2,33 +2,73 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sistema Guaraní UNS</title>
-<link rel="stylesheet" href="style.css">
+<title>SIU Guaraní – Inicio de sesión</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .login-box {
+        background: white;
+        padding: 30px;
+        width: 330px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    .logo {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+    <div class="logo">SIU Guaraní</div>
+
+    <input id="user" type="text" placeholder="Usuario">
+    <input id="pass" type="password" placeholder="Contraseña">
+
+    <button onclick="login()">Ingresar</button>
+</div>
+
 <script>
 function login() {
-    let user = document.getElementById("user").value;
-    let pass = document.getElementById("pass").value;
+    const u = document.getElementById('user').value;
+    const p = document.getElementById('pass').value;
 
-    if (user === "jeremiasvisconti" && pass === "75174637") {
-        sessionStorage.setItem("usuario", user);
-        window.location.href = "panel.html";
+    if (u === "jeremiasvisconti" && p === "75174637") {
+        window.location.href = "menu.html";
     } else {
         alert("Usuario o contraseña incorrectos");
     }
 }
 </script>
-</head>
-
-<body>
-
-<div class="login-container">
-    <h2>Acceso al Sistema</h2>
-
-    <input placeholder="Usuario" id="user" type="text">
-    <input placeholder="Contraseña" id="pass" type="password">
-
-    <button onclick="login()">Ingresar</button>
-</div>
 
 </body>
 </html>
