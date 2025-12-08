@@ -92,7 +92,6 @@
     </div>
   </header>
 
-  <!-- PAGE GRID -->
   <div class="page">
 
     <!-- LEFT SIDEBAR -->
@@ -127,13 +126,13 @@
       </div>
     </aside>
 
-    <!-- MAIN -->
+    <!-- MAIN PANEL -->
     <main class="main">
 
       <div class="panel box">
         <h1>Historia académica</h1>
         <div class="meta">
-          <div>Plan del Alumno: <strong>2007</strong></div>
+          <div>Plan del Alumno: <strong>2006</strong></div>
           <div class="status-right">Estado: <strong>Alumno Regular</strong></div>
         </div>
 
@@ -142,8 +141,8 @@
             <label>Año</label>
             <select id="select-year">
               <option value="all">Todos los años</option>
-              <option value="2025" selected>2025</option>
-              <option value="2026">2026</option>
+              <option value="2024" selected>2024</option>
+              <option value="2025">2025</option>
             </select>
           </div>
 
@@ -159,14 +158,13 @@
           </div>
         </div>
 
-        <!-- YEAR 2025 -->
-        <div class="year-block" data-year="2025">
-          <div class="year-bar">2025</div>
+        <!-- YEAR 2024 (todas aprobadas menos 1 pendiente opcional) -->
+        <div class="year-block" data-year="2024">
+          <div class="year-bar">2024</div>
 
-          <!-- SUBJECT ROWS (state classes: promocionada / aprobada / desaprobada / ausente / en-curso) -->
-          <div class="subject promocionada">
+          <div class="subject aprobada">
             <div class="subject-title">Matemática I (Cálculo diferencial)</div>
-            <div class="subject-meta">Cursada · <span class="tag green">Promocionada</span></div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
           <div class="subject aprobada">
@@ -179,14 +177,14 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-          <div class="subject en-curso">
+          <div class="subject aprobada">
             <div class="subject-title">Ecuaciones Diferenciales</div>
-            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-          <div class="subject desaprobada">
+          <div class="subject aprobada">
             <div class="subject-title">Probabilidad y Estadística</div>
-            <div class="subject-meta">Cursada · <span class="tag red">Desaprobada</span></div>
+            <div class="subject-meta">Examen · <span class="tag green">Aprobado</span></div>
           </div>
 
           <div class="subject aprobada">
@@ -204,9 +202,9 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-          <div class="subject en-curso">
+          <div class="subject aprobada">
             <div class="subject-title">Geometría Descriptiva</div>
-            <div class="subject-meta">Cursada · <span class="tag blue">En curso</span></div>
+            <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
           <div class="subject aprobada">
@@ -214,11 +212,11 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-        </div> <!-- /year 2025 -->
+        </div>
 
-        <!-- YEAR 2026 -->
-        <div class="year-block" data-year="2026">
-          <div class="year-bar">2026</div>
+        <!-- YEAR 2025 -->
+        <div class="year-block" data-year="2025">
+          <div class="year-bar">2025</div>
 
           <div class="subject aprobada">
             <div class="subject-title">Física II</div>
@@ -270,12 +268,11 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-        </div> <!-- /year 2026 -->
+        </div>
 
-      </div> <!-- /panel -->
+      </div>
     </main>
 
-    <!-- RIGHT SIDEBAR (si querés info adicional) -->
     <aside class="sidebar-right">
       <div class="box">
         <h4>Calendario Académico</h4>
@@ -297,10 +294,10 @@
       </div>
     </aside>
 
-  </div> <!-- /page -->
+  </div>
 
 <script>
-/* SUBMENU behavior: click toggle (works mobile) + hover open (desktop) */
+/* SUBMENU behavior */
 document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   const btn = li.querySelector('.sub-btn');
   btn.addEventListener('click', (e)=>{
@@ -311,7 +308,7 @@ document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   li.addEventListener('mouseleave', ()=> li.classList.remove('open'));
 });
 
-/* Populate materia select from DOM */
+/* Populate materia select */
 (function fillMateriaSelect(){
   const sel = document.getElementById('select-materia');
   const subjects = Array.from(document.querySelectorAll('.subject .subject-title')).map(n=>n.textContent.trim());
@@ -324,7 +321,6 @@ document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   });
 })();
 
-/* Year select + show/hide logic */
 const selectYear = document.getElementById('select-year');
 selectYear.addEventListener('change', ()=>{
   const v = selectYear.value;
@@ -333,7 +329,6 @@ selectYear.addEventListener('change', ()=>{
   });
 });
 
-/* Materia filter */
 document.getElementById('select-materia').addEventListener('change', function(){
   const v = this.value;
   document.querySelectorAll('.subject').forEach(s=>{
@@ -342,23 +337,19 @@ document.getElementById('select-materia').addEventListener('change', function(){
   });
 });
 
-/* Show all years button */
 document.getElementById('btn-show-all').addEventListener('click', ()=>{
   document.getElementById('select-year').value = 'all';
   document.querySelectorAll('.year-block').forEach(b=> b.style.display = '');
 });
 
-/* Sidebar checkboxes: filter by class */
 document.querySelectorAll('.sidebar-left input[type="checkbox"]').forEach(ch=>{
   ch.addEventListener('change', ()=> {
     const checked = Array.from(document.querySelectorAll('.sidebar-left input[type="checkbox"]:checked')).map(i=>i.dataset.filter);
-    // if nothing checked, show all
     if(checked.length===0){
       document.querySelectorAll('.subject').forEach(s=> s.style.display = '');
       return;
     }
     document.querySelectorAll('.subject').forEach(s=>{
-      // check if subject has any of the checked classes
       const has = checked.some(cls => s.classList.contains(cls));
       s.style.display = has ? '' : 'none';
     });
