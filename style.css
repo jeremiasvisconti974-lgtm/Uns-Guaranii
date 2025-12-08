@@ -1,151 +1,86 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f3f3;
+/* ----- reset & base ----- */
+*{box-sizing:border-box}
+body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color:#222;}
+
+/* ----- header ----- */
+.header{
+  background:#ffffff;
+  border-bottom:1px solid #e1e4e8;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
-
-/* ===================== TOPBAR ===================== */
-.topbar {
-    background: #005bbb;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+.header-inner{
+  max-width:1150px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;
 }
+.logo{font-weight:700;color:#0d5d85;font-size:18px}
+.logo-small{font-weight:400;font-size:12px;margin-left:8px;color:#567}
 
-.top-left {
-    display: flex;
-    align-items: center;
+/* nav */
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;align-items:center;}
+.main-nav .nav-item{position:relative}
+.main-nav a, .main-nav .sub-btn{
+  display:inline-block;padding:8px 12px;border:1px solid #e6e9ec;background:#fafafa;border-radius:3px;color:#333;text-decoration:none;font-size:14px;cursor:pointer;
 }
+.main-nav .active .sub-btn, .main-nav .active a{background:#1690c7;color:#fff;border-color:#1690c7}
+.main-nav .sub{display:none;position:absolute;top:40px;left:0;background:#fff;border:1px solid #dfe7ea;min-width:220px;box-shadow:0 8px 18px rgba(0,0,0,0.08);z-index:90;padding:6px 0;border-radius:4px}
+.main-nav .sub li a{display:block;padding:8px 12px;border-bottom:1px solid #f2f6f7;color:#333}
+.main-nav .sub li a:hover{background:#f7fbff;color:#003e63}
+.main-nav .has-sub.open .sub{display:block}
 
-.user-icon {
-    width: 30px;
-    margin-right: 10px;
+/* user info */
+.user-info{margin-left:auto;color:#0b4c66;font-weight:700}
+
+/* ----- page grid ----- */
+.page{max-width:1150px;margin:18px auto;display:grid;grid-template-columns:260px 1fr 300px;gap:18px;padding:0 12px}
+
+/* boxes */
+.box{background:#fff;border-radius:6px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.box h3{margin:0 0 10px 0;color:#0b5d7a}
+
+/* sidebar left */
+.sidebar-left .filter-block label{display:block;margin:8px 0;color:#333;font-size:14px}
+.sidebar-left hr{border:none;border-top:1px solid #eef3f5;margin:12px 0}
+
+/* main panel */
+.panel h1{color:#1686b6;margin:0 0 8px 0}
+.meta{display:flex;justify-content:space-between;color:#6d7276;margin-bottom:14px}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.control-group label{display:block;color:#556; font-size:13px;margin-bottom:6px}
+.control-group select{padding:8px;border-radius:6px;border:1px solid #d6dae0;background:#fbfdff}
+.btn-blue{background:#1690c7;color:#fff;border:none;padding:9px 12px;border-radius:6px;cursor:pointer}
+
+/* year block */
+.year-block{background:#ffffff;border-radius:6px;padding:14px;margin-bottom:18px}
+.year-bar{background:#bfe1f3;color:#0b5d7a;padding:10px;border-radius:4px;font-weight:700;margin-bottom:12px}
+
+/* subject rows */
+.subject{
+  background:#f6f7f8;border-radius:6px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid #e9ecef;
 }
+.subject-title{font-weight:700;color:#333}
+.subject-meta{color:#4e5a60;font-size:14px}
 
-.top-menu a {
-    color: white;
-    margin-left: 18px;
-    text-decoration: none;
-    font-size: 14px;
+/* tags */
+.tag{padding:6px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:13px}
+.tag.green{background:#00a651}
+.tag.red{background:#e74c3c}
+.tag.blue{background:#00a0d6}
+.tag.orange{background:#ff9f1a}
+
+/* classes for filtering states */
+.promocionada .tag{background:#1fae4f}
+.aprobada .tag{background:#00a651}
+.desaprobada .tag{background:#e74c3c}
+.ausente .tag{background:#a0a0a0}
+['en-curso']{}
+
+/* small & right sidebar */
+.sidebar-right .box{margin-bottom:14px}
+.sidebar-right h4{margin:0 0 8px 0;color:#0b5d7a}
+
+/* responsive */
+@media (max-width: 980px){
+  .page{grid-template-columns:1fr;padding:0 12px}
+  .user-info{display:none}
+  .main-nav ul{overflow:auto}
+  .logo{font-size:16px}
 }
-
-.top-menu a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* ===================== LAYOUT ===================== */
-.container {
-    display: flex;
-    padding: 20px;
-}
-
-.sidebar {
-    width: 260px;
-}
-
-.box {
-    background: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-}
-
-.box h3 {
-    margin-top: 0;
-    font-size: 17px;
-    color: #003d80;
-}
-
-.box ul {
-    list-style: none;
-    padding: 0;
-}
-
-.box li {
-    margin: 8px 0;
-    font-size: 14px;
-}
-
-.status {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.green { background: #00c851; }
-.red { background: #ff4444; }
-.blue { background: #33b5e5; }
-
-/* ===================== CONTENIDO CENTRAL ===================== */
-.main-content {
-    flex: 1;
-    margin-left: 20px;
-}
-
-.main-content h1 {
-    color: #003d80;
-    font-size: 26px;
-    margin-bottom: 15px;
-}
-
-.filters {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.filters select, .btn {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.btn {
-    background: #005bbb;
-    color: white;
-    border: none;
-}
-
-.year-block {
-    background: white;
-    border-radius: 6px;
-    padding: 18px;
-}
-
-.year-title {
-    font-size: 20px;
-    background: #b3d4ff;
-    padding: 10px;
-    border-radius: 4px;
-    color: #003d80;
-    margin-bottom: 12px;
-}
-
-.subject {
-    background: #eeeeee;
-    padding: 12px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.subject-name {
-    font-weight: bold;
-}
-
-.subject-status {
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 13px;
-    color: white;
-}
-
-.approved { background: #00c851; }
-.failed { background: #ff4444; }
-.in-course { background: #33b5e5; }
