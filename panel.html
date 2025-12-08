@@ -382,7 +382,7 @@
       </div> <!-- /panel -->
     </main>
 
-    <!-- RIGHT SIDEBAR (si querés info adicional) -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="sidebar-right">
       <div class="box">
         <h4>Calendario Académico</h4>
@@ -407,7 +407,7 @@
   </div> <!-- /page -->
 
 <script>
-/* SUBMENU behavior: click toggle (works mobile) + hover open (desktop) */
+/* SUBMENU behavior */
 document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   const btn = li.querySelector('.sub-btn');
   btn.addEventListener('click', (e)=>{
@@ -418,7 +418,7 @@ document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   li.addEventListener('mouseleave', ()=> li.classList.remove('open'));
 });
 
-/* Populate materia select from DOM */
+/* Populate materia select */
 (function fillMateriaSelect(){
   const sel = document.getElementById('select-materia');
   const subjects = Array.from(document.querySelectorAll('.subject .subject-title')).map(n=>n.textContent.trim());
@@ -431,7 +431,7 @@ document.querySelectorAll('.main-nav .has-sub').forEach(li=>{
   });
 })();
 
-/* Year select + show/hide logic */
+/* Year filter */
 const selectYear = document.getElementById('select-year');
 selectYear.addEventListener('change', ()=>{
   const v = selectYear.value;
@@ -449,23 +449,23 @@ document.getElementById('select-materia').addEventListener('change', function(){
   });
 });
 
-/* Show all years button */
+/* Show all years */
 document.getElementById('btn-show-all').addEventListener('click', ()=>{
   document.getElementById('select-year').value = 'all';
   document.querySelectorAll('.year-block').forEach(b=> b.style.display = '');
 });
 
-/* Sidebar checkboxes: filter by class */
+/* Sidebar checkboxes */
 document.querySelectorAll('.sidebar-left input[type="checkbox"]').forEach(ch=>{
   ch.addEventListener('change', ()=> {
     const checked = Array.from(document.querySelectorAll('.sidebar-left input[type="checkbox"]:checked')).map(i=>i.dataset.filter);
-    // if nothing checked, show all
+
     if(checked.length===0){
       document.querySelectorAll('.subject').forEach(s=> s.style.display = '');
       return;
     }
+
     document.querySelectorAll('.subject').forEach(s=>{
-      // check if subject has any of the checked classes
       const has = checked.some(cls => s.classList.contains(cls));
       s.style.display = has ? '' : 'none';
     });
