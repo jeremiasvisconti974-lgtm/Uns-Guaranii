@@ -87,67 +87,10 @@
       </nav>
 
       <div class="user-info">
-        Jeremías Visconti — Ingeniería Civil
+        Jeremías Santino Visconti — Ingeniería Civil
       </div>
     </div>
   </header>
-
-  <!-- === DATOS PERSONALES + RESUMEN (debajo del header) === -->
-  <section class="summary-row">
-    <div class="summary-inner">
-
-      <!-- Datos personales -->
-      <div class="box personal-box">
-        <h3>Datos personales</h3>
-        <p><strong>Nombre:</strong> Jeremías Santino Visconti</p>
-        <p><strong>DNI:</strong> 47.638.194</p>
-        <p><strong>Legajo:</strong> 23-47638</p>
-        <p><strong>Email:</strong> jeremiasvisconti974@gmail.com</p>
-        <p><strong>Fecha de ingreso:</strong> 03/03/2024</p>
-      </div>
-
-      <!-- Resumen académico -->
-      <div class="box summary-box">
-        <h3>Resumen académico</h3>
-
-        <div class="summary-grid">
-          <div>
-            <div class="summary-label">Créditos acumulados</div>
-            <div class="summary-value" id="credits">72</div>
-          </div>
-
-          <div>
-            <div class="summary-label">Promedio general</div>
-            <div class="summary-value" id="gpa">7.8</div>
-          </div>
-
-          <div>
-            <div class="summary-label">Plan del Alumno</div>
-            <div class="summary-value">2006</div>
-          </div>
-
-          <div>
-            <div class="summary-label">Avance del plan</div>
-            <div class="progress-wrap">
-              <div class="progress-bar" id="progress-bar" style="width:0%"></div>
-            </div>
-            <div class="summary-small" id="progress-percent">0%</div>
-          </div>
-        </div>
-
-        <div class="small-note">Estado académico: <strong>Alumno Regular</strong></div>
-      </div>
-
-      <!-- Correlativas rápidas -->
-      <div class="box correlativas-box">
-        <h3>Correlativas - faltantes</h3>
-        <ul id="correlativas-list">
-          <li>— Ninguna pendiente por ahora</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
 
   <!-- PAGE GRID -->
   <div class="page">
@@ -216,7 +159,7 @@
           </div>
         </div>
 
-        <!-- YEAR 2024 (todas aprobadas menos 1 pendiente opcional) -->
+        <!-- YEAR 2024 -->
         <div class="year-block" data-year="2024">
           <div class="year-bar">2024</div>
 
@@ -270,7 +213,7 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
-        </div>
+        </div> <!-- /year 2024 -->
 
         <!-- YEAR 2025 -->
         <div class="year-block" data-year="2025">
@@ -326,35 +269,134 @@
             <div class="subject-meta">Cursada · <span class="tag green">Aprobada</span></div>
           </div>
 
+        </div> <!-- /year 2025 -->
+
+        <!-- NOTIFICACIONES -->
+        <div class="box" style="margin-top:12px;">
+          <h4 style="color:#0b5d7a;margin:0 0 8px 0;">Notificaciones</h4>
+          <ul style="margin:0 0 0 18px;padding:0;color:#333;">
+            <li>Inscripción a finales abierta — vence 10/03/2025</li>
+            <li>Se publicó acta de Física I</li>
+            <li>Tu constancia de alumno regular está disponible (QR en la constancia)</li>
+          </ul>
         </div>
 
-      </div>
+        <!-- HISTORIAL DE EXÁMENES -->
+        <div class="box" style="margin-top:12px;">
+          <h4 style="color:#0b5d7a;margin:0 0 12px 0;">Historial de exámenes</h4>
+
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr style="text-align:left;background:#f7fbff">
+                <th style="padding:10px;border-bottom:1px solid #e9eef0">Materia</th>
+                <th style="padding:10px;border-bottom:1px solid #e9eef0">Fecha</th>
+                <th style="padding:10px;border-bottom:1px solid #e9eef0">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 2024 -->
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Matemática I (Cálculo diferencial)</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">6</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Matemática II (Cálculo integral)</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Álgebra Lineal</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Ecuaciones Diferenciales</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">9</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Probabilidad y Estadística</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">15/06/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">9</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Física I</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">15/06/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">9</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Química General</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Informática / Computación</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">20/11/2024</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">7</td>
+              </tr>
+
+              <!-- separator row -->
+              <tr><td colspan="3" style="height:12px"></td></tr>
+
+              <!-- 2025 (finales coherentes) -->
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Física II</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">12/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">7</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Resistencia de Materiales (Estructuras I)</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">12/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Geotecnia (Mecánica de Suelos)</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">12/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Construcción</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">12/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">9</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Topografía y Saneamiento Ambiental</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">12/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">8</td>
+              </tr>
+              <!-- desaprobada coherente -->
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">Mecánica de Fluidos / Hidráulica</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">10/03/2025</td>
+                <td style="padding:10px;border-bottom:1px solid #f1f4f5">4</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div> <!-- /panel -->
     </main>
 
-    <!-- RIGHT SIDEBAR (info adicional, notificaciones, historial de examenes) -->
+    <!-- RIGHT SIDEBAR (si querés info adicional) -->
     <aside class="sidebar-right">
       <div class="box">
-        <h4>Notificaciones</h4>
-        <ul class="notifs">
-          <li>Inscripción a finales abierta — vence 10/03/2025</li>
-          <li>Se publicó acta de Física I</li>
-          <li>Tu constancia de alumno regular está disponible</li>
-        </ul>
+        <h4>Calendario Académico</h4>
+        <p><strong>2025 - Primer Cuatr.</strong></p>
+        <p>Inicio clases: 03/03/2025</p>
+        <p>Fin clases: 29/11/2025</p>
       </div>
 
       <div class="box">
-        <h4>Historial de exámenes</h4>
-        <table class="mini-table" id="exam-history">
-          <thead><tr><th>Materia</th><th>Fecha</th><th>Nota</th></tr></thead>
-          <tbody>
-            <!-- generado por JS -->
-          </tbody>
-        </table>
+        <h4>Inscripciones</h4>
+        <p>Inicio inscripciones: 03/03/2025</p>
+        <p>Fin inscripciones: 10/03/2025</p>
       </div>
 
       <div class="box">
-        <h4>Turnos</h4>
-        <p><strong>Turno 2025-01</strong></p>
+        <h4>Exámenes</h4>
+        <p>Turno 2025-01</p>
         <p>Inicio: 01/07/2025</p>
       </div>
     </aside>
@@ -420,84 +462,10 @@ document.querySelectorAll('.sidebar-left input[type="checkbox"]').forEach(ch=>{
       return;
     }
     document.querySelectorAll('.subject').forEach(s=>{
-      // check if subject has any of the checked classes
       const has = checked.some(cls => s.classList.contains(cls));
       s.style.display = has ? '' : 'none';
     });
   });
-});
-
-/* === EXTRA: cálculos para resumen académico, correlativas y exam history === */
-function computeSummaryAndHistory(){
-  const subjects = Array.from(document.querySelectorAll('.subject'));
-  let total = subjects.length;
-  let aprobadas = 0, encurso = 0, desaprobadas = 0;
-  let credits = 0;
-  const examHistory = [];
-
-  subjects.forEach(s=>{
-    const title = s.querySelector('.subject-title').textContent.trim();
-    const tagEl = s.querySelector('.tag');
-    const tagText = tagEl ? tagEl.textContent.trim().toLowerCase() : '';
-    // count states
-    if(tagText.includes('aprob')) aprobadas++;
-    else if(tagText.includes('en curso') || tagText.includes('en curso'.toLowerCase())) encurso++;
-    else if(tagText.includes('desaprob')) desaprobadas++;
-
-    // simple credits logic: each materia 6 credits aprox
-    credits += 6;
-
-    // build exam history if subject-meta includes 'Examen' OR tag is 'Aprobado' with exam (heuristic)
-    const meta = s.querySelector('.subject-meta').textContent.trim().toLowerCase();
-    if(meta.includes('examen') || tagText === 'aprobado' || tagText === 'aprobada'){
-      // push a fake entry if it's an examen or aprobada on examen
-      examHistory.push({
-        materia: title,
-        fecha: meta.includes('examen') ? '15/06/2024' : '20/11/2024',
-        nota: (tagText.includes('aprob') ? (Math.floor(6 + Math.random()*4)) : '-')
-      });
-    }
-  });
-
-  // fill widgets
-  const creditsEl = document.getElementById('credits');
-  const gpaEl = document.getElementById('gpa');
-  const progressBar = document.getElementById('progress-bar');
-  const progressPct = document.getElementById('progress-percent');
-
-  creditsEl.textContent = credits;
-  // crude GPA: base 7.5 + small random (for demo)
-  gpaEl.textContent = ( (7.4 + (aprobadas/total)*1.2) ).toFixed(2);
-
-  const percent = Math.round((aprobadas / total) * 100);
-  progressBar.style.width = percent + '%';
-  progressPct.textContent = percent + '%';
-
-  // correlativas: if any desaprobada, show them
-  const corrList = document.getElementById('correlativas-list');
-  corrList.innerHTML = '';
-  if(desaprobadas === 0){
-    corrList.innerHTML = '<li>— Ninguna pendiente por ahora</li>';
-  } else {
-    document.querySelectorAll('.subject.desaprobada .subject-title').forEach(n=>{
-      const li = document.createElement('li');
-      li.textContent = n.textContent.trim() + ' — Final pendiente';
-      corrList.appendChild(li);
-    });
-  }
-
-  // exam history table
-  const tbody = document.querySelector('#exam-history tbody');
-  tbody.innerHTML = '';
-  examHistory.slice(0,8).forEach(e=>{
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${e.materia}</td><td>${e.fecha}</td><td>${e.nota}</td>`;
-    tbody.appendChild(tr);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
-  computeSummaryAndHistory();
 });
 </script>
 
