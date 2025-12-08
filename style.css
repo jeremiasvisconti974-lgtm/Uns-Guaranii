@@ -1,86 +1,167 @@
-/* ----- reset & base ----- */
-*{box-sizing:border-box}
-body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color:#222;}
-
-/* ----- header ----- */
-.header{
-  background:#ffffff;
-  border-bottom:1px solid #e1e4e8;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+/* layout */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eef3f5;
 }
-.header-inner{
-  max-width:1150px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;
+.page{
+    max-width:1100px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:20px;
 }
-.logo{font-weight:700;color:#0d5d85;font-size:18px}
-.logo-small{font-weight:400;font-size:12px;margin-left:8px;color:#567}
-
-/* nav */
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;align-items:center;}
-.main-nav .nav-item{position:relative}
-.main-nav a, .main-nav .sub-btn{
-  display:inline-block;padding:8px 12px;border:1px solid #e6e9ec;background:#fafafa;border-radius:3px;color:#333;text-decoration:none;font-size:14px;cursor:pointer;
+.logo{
+    font-weight:700;
+    font-size:22px;
+    color:#004c6d;
 }
-.main-nav .active .sub-btn, .main-nav .active a{background:#1690c7;color:#fff;border-color:#1690c7}
-.main-nav .sub{display:none;position:absolute;top:40px;left:0;background:#fff;border:1px solid #dfe7ea;min-width:220px;box-shadow:0 8px 18px rgba(0,0,0,0.08);z-index:90;padding:6px 0;border-radius:4px}
-.main-nav .sub li a{display:block;padding:8px 12px;border-bottom:1px solid #f2f6f7;color:#333}
-.main-nav .sub li a:hover{background:#f7fbff;color:#003e63}
-.main-nav .has-sub.open .sub{display:block}
 
-/* user info */
-.user-info{margin-left:auto;color:#0b4c66;font-weight:700}
+/* navbar */
+.main-nav{
+    background:white;
+    padding:14px 20px;
+    display:flex;
+    gap:10px;
+    border-bottom:1px solid #d9d9d9;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+.main-nav ul{
+    list-style:none;
+    display:flex;
+    gap:10px;
+    padding:0;
+    margin:0;
+}
+.main-nav li{
+    position:relative;
+}
+.main-nav a{
+    display:block;
+    background:#ffffff;
+    border:1px solid #dcdcdc;
+    padding:10px 18px;
+    border-radius:6px;
+    color:#004c6d;
+    font-weight:600;
+    text-decoration:none;
+}
+.main-nav a:hover{
+    background:#f3f8fb;
+}
 
-/* ----- page grid ----- */
-.page{max-width:1150px;margin:18px auto;display:grid;grid-template-columns:260px 1fr 300px;gap:18px;padding:0 12px}
+/*************/
+/* DROPDOWNS */
+/*************/
+.dropdown-menu{
+    position:absolute;
+    left:0;
+    top:100%;
+    background:white;
+    min-width:210px;
+    padding:10px 0;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.18);
+    margin-top:6px;
+    z-index:99999; /* evita bug de tapar contenido */
+    display:none;
+}
+.main-nav li:hover .dropdown-menu{
+    display:block;
+}
+.dropdown-menu a{
+    padding:10px 18px;
+    border-radius:0;
+    border:none;
+    color:#004c6d;
+}
+.dropdown-menu a:hover{
+    background:#edf4f7;
+}
 
-/* boxes */
-.box{background:#fff;border-radius:6px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
-.box h3{margin:0 0 10px 0;color:#0b5d7a}
+/* subtítulos del dropdown */
+.dropdown-subtitle{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:#004c6d;
+    padding:6px 16px 6px;
+    opacity:.75;
+    margin-top:4px;
+}
 
-/* sidebar left */
-.sidebar-left .filter-block label{display:block;margin:8px 0;color:#333;font-size:14px}
-.sidebar-left hr{border:none;border-top:1px solid #eef3f5;margin:12px 0}
+/**************/
+/* side panel */
+/**************/
+.sidebar-right .box{
+    background:white;
+    padding:18px;
+    border-radius:8px;
+    margin-bottom:14px;
+}
+.sidebar-right h4{
+    margin:0 0 8px 0;
+    color:#004c6d;
+}
 
-/* main panel */
-.panel h1{color:#1686b6;margin:0 0 8px 0}
-.meta{display:flex;justify-content:space-between;color:#6d7276;margin-bottom:14px}
-.controls{display:flex;gap:12px;align-items:center;margin-bottom:16px}
-.control-group label{display:block;color:#556; font-size:13px;margin-bottom:6px}
-.control-group select{padding:8px;border-radius:6px;border:1px solid #d6dae0;background:#fbfdff}
-.btn-blue{background:#1690c7;color:#fff;border:none;padding:9px 12px;border-radius:6px;cursor:pointer}
-
-/* year block */
-.year-block{background:#ffffff;border-radius:6px;padding:14px;margin-bottom:18px}
-.year-bar{background:#bfe1f3;color:#0b5d7a;padding:10px;border-radius:4px;font-weight:700;margin-bottom:12px}
-
-/* subject rows */
+/**************/
+/* subject box */
+/**************/
 .subject{
-  background:#f6f7f8;border-radius:6px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid #e9ecef;
+    background:#f6f7f8;
+    border-radius:6px;
+    padding:14px;
+    margin-bottom:10px;
 }
-.subject-title{font-weight:700;color:#333}
-.subject-meta{color:#4e5a60;font-size:14px}
+.subject-title{
+    font-weight:700;
+    color:#004c6d;
+}
+.subject-meta{
+    color:#4e5a60;
+    font-size:14px;
+}
 
-/* tags */
-.tag{padding:6px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:13px}
+/************/
+/* tags     */
+/************/
+.tag{
+    padding:6px 10px;
+    border-radius:6px;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+    display:inline-block;
+}
 .tag.green{background:#00a651}
 .tag.red{background:#e74c3c}
 .tag.blue{background:#00a0d6}
 .tag.orange{background:#ff9f1a}
 
-/* classes for filtering states */
+/* filtering status colors */
 .promocionada .tag{background:#1fae4f}
 .aprobada .tag{background:#00a651}
 .desaprobada .tag{background:#e74c3c}
 .ausente .tag{background:#a0a0a0}
 ['en-curso']{}
 
-/* small & right sidebar */
-.sidebar-right .box{margin-bottom:14px}
-.sidebar-right h4{margin:0 0 8px 0;color:#0b5d7a}
-
+/**************/
 /* responsive */
-@media (max-width: 980px){
-  .page{grid-template-columns:1fr;padding:0 12px}
-  .user-info{display:none}
-  .main-nav ul{overflow:auto}
-  .logo{font-size:16px}
+/**************/
+@media (max-width:980px){
+    .page{
+        grid-template-columns:1fr;
+        padding:0 10px;
+    }
+    .user-info{
+        display:none;
+    }
+    .main-nav ul{
+        overflow:auto;
+    }
+    .logo{
+        font-size:16px;
+    }
 }
