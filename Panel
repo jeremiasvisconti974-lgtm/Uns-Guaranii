@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel Académico</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+window.onload = () => {
+    const usuario = sessionStorage.getItem("usuario");
+    if (!usuario) window.location.href = "index.html";
+    document.getElementById("nombreAlumno").innerText = usuario.toUpperCase();
+}
+</script>
+
+</head>
+<body>
+
+<div class="header">
+    <h2>Sistema Guaraní UNS</h2>
+</div>
+
+<div class="sidebar">
+    <p>Materias</p>
+    <p>Calificaciones</p>
+    <p>Inscripción</p>
+    <p>Perfil</p>
+</div>
+
+<div class="main">
+
+    <h3>Alumno: <span id="nombreAlumno"></span></h3>
+    <h2>Ingeniería Civil - Materias</h2>
+
+    <div class="materia">
+        <h4>Cálculo I</h4>
+        Estado: Regular<br>
+        Tareas: TP Nº2 mañana
+    </div>
+
+    <div class="materia">
+        <h4>Estabilidad I</h4>
+        Estado: Cursando<br>
+        Tareas: Problemas 3,4,7
+    </div>
+
+    <div class="materia">
+        <h4>Hormigón Armado</h4>
+        Estado: Regular<br>
+        Tareas: Carpeta firmada
+    </div>
+
+    <div class="materia">
+        <h4>Física II</h4>
+        Estado: Cursando<br>
+        Tareas: Guía Nº8
+    </div>
+
+</div>
+
+</body>
+</html>
