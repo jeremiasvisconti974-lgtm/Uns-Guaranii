@@ -33,25 +33,12 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   display:inline-block;padding:8px 12px;border:1px solid #e6e9ec;background:#fafafa;border-radius:3px;color:#333;text-decoration:none;font-size:14px;cursor:pointer;
 }
 .main-nav .active .sub-btn, .main-nav .active a{background:#1690c7;color:#fff;border-color:#1690c7}
-
 .main-nav .sub{
-  display:none;
-  position:absolute;
-  top:40px;
-  left:0;
-  background:#fff;
-  border:1px solid #dfe7ea;
-  min-width:220px;
-  box-shadow:0 8px 18px rgba(0,0,0,0.08);
-  z-index:999999;
-  padding:6px 0;
-  border-radius:4px;
+  display:none;position:absolute;top:40px;left:0;background:#fff;border:1px solid #dfe7ea;
+  min-width:220px;box-shadow:0 8px 18px rgba(0,0,0,0.08);z-index:9999;
+  padding:6px 0;border-radius:4px
 }
-
-.main-nav .sub li a{
-  display:block;padding:8px 12px;
-  border-bottom:1px solid #f2f6f7;color:#333
-}
+.main-nav .sub li a{display:block;padding:8px 12px;border-bottom:1px solid #f2f6f7;color:#333}
 .main-nav .sub li a:hover{background:#f7fbff;color:#003e63}
 .main-nav .has-sub.open .sub{display:block}
 
@@ -63,9 +50,6 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   max-width:1150px;margin:18px auto;
   display:grid;grid-template-columns:260px 1fr 300px;
   gap:18px;padding:0 12px;
-
-  /* FIX: permitir que los submenús se salgan */
-  overflow: visible !important;
   position: relative;
   z-index: 1;
 }
@@ -75,9 +59,6 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .box h3{margin:0 0 10px 0;color:#0b5d7a}
 
 /* sidebar left */
-.sidebar-left{
-  overflow: visible !important;
-}
 .sidebar-left .filter-block label{display:block;margin:8px 0;color:#333;font-size:14px}
 .sidebar-left hr{border:none;border-top:1px solid #eef3f5;margin:12px 0}
 
@@ -85,7 +66,6 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .panel{
   position: relative;
   z-index: 1;
-  overflow: visible !important;
 }
 
 .panel h1{color:#1686b6;margin:0 0 8px 0}
@@ -123,9 +103,6 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .en-curso .tag{background:#00a0d6}
 
 /* right sidebar */
-.sidebar-right{
-  overflow: visible !important;
-}
 .sidebar-right .box{margin-bottom:14px}
 .sidebar-right h4{margin:0 0 8px 0;color:#0b5d7a}
 
@@ -137,12 +114,23 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   .logo{font-size:16px}
 }
 
-/* === FIX FINAL: menú y submenús siempre arriba === */
-.main-nav{
-  position: relative;
-  z-index: 999999999 !important;
+/* === 🔥 FIX DEFINITIVO PARA QUE LOS SUBMENÚS NO SE TAPEN 🔥 === */
+.header {
+  overflow: visible !important;
 }
 
-.main-nav .sub{
-  z-index: 999999999 !important;
+.header-inner {
+  overflow: visible !important;
+  position: relative;
+  z-index: 999999 !important;
+}
+
+.main-nav {
+  position: relative;
+  z-index: 999999 !important;
+}
+
+.main-nav .sub {
+  position: absolute !important;
+  z-index: 999999 !important;
 }
