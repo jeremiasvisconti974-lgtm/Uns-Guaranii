@@ -7,12 +7,7 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   background:#ffffff;
   border-bottom:1px solid #e1e4e8;
   box-shadow: 0 1px 0 rgba(0,0,0,0.02);
-
-  /* ⭐ PARA QUE LOS SUBMENÚS NO QUEDEN TAPADOS ⭐ */
-  position: relative;
-  z-index: 999;
 }
-
 .header-inner{
   max-width:1150px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;
 }
@@ -39,21 +34,10 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 }
 .main-nav .active .sub-btn, .main-nav .active a{background:#1690c7;color:#fff;border-color:#1690c7}
 .main-nav .sub{
-  display:none;
-  position:absolute;
-  top:40px;
-  left:0;
-  background:#fff;
-  border:1px solid #dfe7ea;
-  min-width:220px;
-  box-shadow:0 8px 18px rgba(0,0,0,0.08);
-  padding:6px 0;
-  border-radius:4px;
-
-  /* ⭐ SUPER IMPORTANTE PARA QUE SE VEAN ⭐ */
-  z-index: 9999;
+  display:none;position:absolute;top:40px;left:0;background:#fff;border:1px solid #dfe7ea;
+  min-width:220px;box-shadow:0 8px 18px rgba(0,0,0,0.08);z-index:9999;
+  padding:6px 0;border-radius:4px
 }
-
 .main-nav .sub li a{display:block;padding:8px 12px;border-bottom:1px solid #f2f6f7;color:#333}
 .main-nav .sub li a:hover{background:#f7fbff;color:#003e63}
 .main-nav .has-sub.open .sub{display:block}
@@ -62,7 +46,13 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .user-info{margin-left:auto;color:#0b4c66;font-weight:700}
 
 /* ----- page grid ----- */
-.page{max-width:1150px;margin:18px auto;display:grid;grid-template-columns:260px 1fr 300px;gap:18px;padding:0 12px}
+.page{
+  max-width:1150px;margin:18px auto;
+  display:grid;grid-template-columns:260px 1fr 300px;
+  gap:18px;padding:0 12px;
+  position: relative;
+  z-index: 1;
+}
 
 /* boxes */
 .box{background:#fff;border-radius:6px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
@@ -73,6 +63,11 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
 .sidebar-left hr{border:none;border-top:1px solid #eef3f5;margin:12px 0}
 
 /* main panel */
+.panel{
+  position: relative;
+  z-index: 1;
+}
+
 .panel h1{color:#1686b6;margin:0 0 8px 0}
 .meta{display:flex;justify-content:space-between;color:#6d7276;margin-bottom:14px}
 .controls{display:flex;gap:12px;align-items:center;margin-bottom:16px}
@@ -117,4 +112,10 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   .user-info{display:none}
   .main-nav ul{overflow:auto}
   .logo{font-size:16px}
+}
+
+/* === 🔥 FIX FINAL PARA QUE EL MENÚ NO QUEDE TAPADO 🔥 === */
+.main-nav{
+  position: relative;
+  z-index: 99999;
 }
