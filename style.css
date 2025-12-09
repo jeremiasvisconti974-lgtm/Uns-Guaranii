@@ -114,8 +114,27 @@ body{margin:0;font-family: Arial, Helvetica, sans-serif;background:#f2f4f6;color
   .logo{font-size:16px}
 }
 
-/* === 🔥 FIX FINAL PARA QUE EL MENÚ NO QUEDE TAPADO 🔥 === */
-.main-nav{
+/* === 🔥 FIX DEFINITIVO PARA QUE EL MENÚ NO QUEDE TAPADO 🔥 === */
+
+/* Header y menú NUNCA quedan debajo */
+.header,
+.header * {
   position: relative;
-  z-index: 99999;
+  z-index: 999999 !important;
+}
+
+.main-nav,
+.main-nav * {
+  position: relative;
+  z-index: 999999 !important;
+}
+
+/* Todo el contenido debajo */
+.page,
+.sidebar-left,
+.sidebar-right,
+.panel,
+.box {
+  position: relative;
+  z-index: 1 !important;
 }
